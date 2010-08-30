@@ -1,0 +1,83 @@
+= MinKoi
+
+MinKoi is a small programming language that is designed to be easy to use, easy to understand and easy to implement. 
+
+=== Example
+
+This is an old-school 'Blast Off!' program written in MinKoi:
+
+  countdown = function( count )
+    print( to_string( count ))
+    print( ", " )
+    if( count == 0 )
+      return()
+    end
+    count = count - 1
+    call( countdown, count )
+  end
+  
+  call( countdown, 10 )
+  
+  print( "Blast Off!" )
+  
+  #=> 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, Blast Off!
+
+
+=== More Info
+
+MinKoi was conceived as an intermediate language in which it would be possible to implement higher-level languages and their object models, to this end flexibility is one of it's primary goals.
+
+MinKoi is an imperative, dynamic, weakly-typed language with first-class functions. MinKoi's syntax is influenced by JavaScript, Lua and Ruby, but works very hard to be unambiguous so that it is easy to write parsers for (in stark contrast with Ruby).
+
+=== Goals
+
+* Ease of use
+* Ease of implementation
+* Ease of modification
+* Flexibility 
+* Speed
+
+=== Data types
+
+MinKoi features a full set of basic data types including:
+
+* Nil
+* Boolean
+* Integer
+* Float
+* String
+* Function
+
+(array and hash coming soon!)
+
+=== Flow control
+
+MinKoi currently only implements a minimal set of flow control operators:
+
+  if( expression )
+    call( do_work )
+  endif
+  
+  unless( expression )
+    call( do_other_work )
+  endunless
+  
+=== Built-in functions
+
+print( string )::   Writes a string to STDOUT.
+gets()::    Fetches a newline delimited string from STDIN.
+call( identifier [, parameter])::   Calls the function that is stored in 'identifier'.
+tailcall( identifier[, parameter])::  Performs a 'tailcall' to the function stored in 'identifier'. This type of call is used when recursing heavily to improve performance and to facilitate the use of functions as iterators.
+return( [value] ):: Return a value from a function.
+to_string( value/identifier ):: Converts the given value to a representative string.
+type_of( value ):: Returns a string representing the type of the value given, eg: "integer".
+
+=== Reserved words
+
+if, endif, unless, endunless, function, endfunction, call, tailcall, print, gets, return, to_string, type_of, nil, true, false
+
+=== Author & Credits
+
+Author:: {Aaron Gough}[mailto:aaron@aarongough.com]
+
+Copyright (c) 2010 {Aaron Gough}[http://thingsaaronmade.com/] ({thingsaaronmade.com}[http://thingsaaronmade.com/]), released under the MIT license
