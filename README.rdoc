@@ -1,10 +1,10 @@
-= MinKoi
+= Koi
 
-MinKoi is a small programming language that is designed to be easy to use, easy to understand and easy to implement. 
+Koi is a small programming language that is designed to be easy to use, easy to understand and easy to implement. Koi is an imperative, dynamic, weakly-typed language with first-class functions. Koi's syntax is influenced by JavaScript, Lua and Ruby, but works very hard to be unambiguous so that it is easy to write parsers for (in stark contrast with Ruby).
 
 === Example
 
-This is an old-school 'Blast Off!' program written in MinKoi:
+This is an old-school 'Blast Off!' program written in Koi:
 
   countdown = function( count )
     print( to_string( count ))
@@ -22,37 +22,37 @@ This is an old-school 'Blast Off!' program written in MinKoi:
   
   #=> 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, Blast Off!
 
+=== Installation
 
-=== More Info
+For ease of installation the default installation of Koi is packaged as a RubyGem. Providing you have Ruby and RubyGems installed installing Koi is as easy as entering the following command in a terminal:
 
-MinKoi was conceived as an intermediate language in which it would be possible to implement higher-level languages and their object models, to this end flexibility is one of it's primary goals.
+  gem install koi-lang
+  
+Mac OS X and most Unix/Linux distributions come with an installation of Ruby and RubyGems. If you do not have Ruby and RubyGems installed please check the {Ruby website for instructions}[http://www.ruby-lang.org/en/downloads/].
 
-MinKoi is an imperative, dynamic, weakly-typed language with first-class functions. MinKoi's syntax is influenced by JavaScript, Lua and Ruby, but works very hard to be unambiguous so that it is easy to write parsers for (in stark contrast with Ruby).
+=== Usage
 
-=== Goals
+After Koi is installed you can run a program by typing the following on the command line:
 
-* Ease of use
-* Ease of implementation
-* Ease of modification
-* Flexibility 
-* Speed
+  koi /path/to/program
+
+== Koi Fundamentals
 
 === Data types
 
-MinKoi features a full set of basic data types including:
+Koi features a full set of basic and compound data types including:
 
 * Nil
 * Boolean
 * Integer
 * Float
 * String
+* Hash
 * Function
-
-(array and hash coming soon!)
 
 === Flow control
 
-MinKoi currently only implements a minimal set of flow control operators:
+Koi currently only implements a minimal set of flow control operators:
 
   if( expression )
     call( do_work )
@@ -74,7 +74,19 @@ type_of( value ):: Returns a string representing the type of the value given, eg
 
 === Reserved words
 
-if, endif, unless, endunless, function, endfunction, call, tailcall, print, gets, return, to_string, type_of, nil, true, false
+if, unless, function, end, call, tailcall, print, gets, return, to_string, type_of, nil, true, false
+
+=== Components
+
+The default installation of Koi consists of the following discrete components:
+
+* The reference parser: {koi-reference-parser}[http://github.com/aarongough/koi-reference-parser]
+* The reference compiler: {koi-reference-compiler}[http://github.com/aarongough/koi-reference-compiler]
+* The standard Virtual Machine: {koi-vm-ruby}[http://github.com/aarongough/koi-vm-ruby]
+
+Each of these components are completely stand-alone and are specifically designed to be as simple as possible. I strongly encourage pulling them apart to see how they tick, and changing them if you see fit! Just make sure if to contribute any improvements back to the main repository!
+
+==== Hope you enjoy Koi!
 
 === Author & Credits
 
