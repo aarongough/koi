@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+
+require 'koi-reference-parser'
+require 'koi-reference-compiler'
+require 'koi-vm-ruby'
+
+include KoiReferenceParser
+include KoiReferenceCompiler
+include KoiVMRuby
+
+program_text = ARGF.read
+
+ast_hash = Parser.parse( program_text ).to_hash
+bytecode = Compiler.compile( ast_hash )
+VM.new.run( bytecode )
