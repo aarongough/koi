@@ -16,7 +16,7 @@ begin
     gemspec.authors = ["Aaron Gough"]
     gemspec.rdoc_options << '--line-numbers' << '--inline-source'
     gemspec.extra_rdoc_files = ['README.rdoc', 'MIT-LICENSE']
-    gemspec.add_dependency('koi-vm')
+    gemspec.add_dependency('koi-vm-ruby')
     gemspec.add_dependency('koi-reference-parser')
     gemspec.add_dependency('koi-reference-compiler')
     gemspec.executables << 'koi'
