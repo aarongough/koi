@@ -8,24 +8,25 @@ task :default => :test
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gemspec|
-    gemspec.name = "min-koi"
-    gemspec.summary = "A Parser and compiler for the MinKoi language."
-    gemspec.description = "A modular compilation toolchain for the MinKoi language."
+    gemspec.name = "koi-lang"
+    gemspec.summary = "A parser, compiler and virtual machine toolchain for the Koi programming language."
+    gemspec.description = "This package provides the reference implementations of the parser and compiler for Koi, as well as a basic virtual machine. This is the official package for installing Koi."
     gemspec.email = "aaron@aarongough.com"
-    gemspec.homepage = "http://github.com/aarongough/min-koi"
+    gemspec.homepage = "http://github.com/aarongough/koi"
     gemspec.authors = ["Aaron Gough"]
     gemspec.rdoc_options << '--line-numbers' << '--inline-source'
     gemspec.extra_rdoc_files = ['README.rdoc', 'MIT-LICENSE']
-    gemspec.add_dependency('treetop')
     gemspec.add_dependency('koi-vm')
-    gemspec.executables << 'minkoi'
+    gemspec.add_dependency('koi-reference-parser')
+    gemspec.add_dependency('koi-reference-compiler')
+    gemspec.executables << 'koi'
   end
 rescue LoadError
   puts "Jeweler not available. Install it with: gem install jeweler"
 end
 
 
-desc 'Test MinKoi.'
+desc 'Test koi-lang.'
 Rake::TestTask.new(:test) do |t|
   t.libs << 'lib/*.rb'
   t.libs << 'test'
@@ -34,10 +35,10 @@ Rake::TestTask.new(:test) do |t|
 end
 
 
-desc 'Generate documentation for MinKoi.'
+desc 'Generate documentation for koi-lang.'
 Rake::RDocTask.new(:rdoc) do |rdoc|
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title    = 'MinKoi'
+  rdoc.title    = 'Koi'
   rdoc.options << '--line-numbers' << '--inline-source'
   rdoc.rdoc_files.include('README.rdoc')
   rdoc.rdoc_files.include('lib/**/*.rb')
