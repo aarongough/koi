@@ -68,8 +68,8 @@ Koi currently only implements a minimal set of flow control operators:
 
 [print( string )]                     Writes a string to STDOUT.
 [gets()]                              Fetches a newline delimited string from STDIN.
-[call( identifier [, parameter] )]    Calls the function that is stored in 'identifier'.
-[tailcall( identifier[, parameter] )] Performs a 'tailcall' to the function stored in 'identifier'. This type of call is used when recursing heavily to improve performance and to facilitate the use of functions as iterators.
+[call( identifier [, parameter])]    Calls the function that is stored in 'identifier'.
+[tailcall( identifier[, parameter])] Performs a 'tailcall' to the function stored in 'identifier'. This type of call is used when recursing heavily to improve performance and to facilitate the use of functions as iterators.
 [return([ value ])]                   Return a value from a function.
 [to_string( value )]                  Converts the given value to a representative string.
 [type_of( value )]                    Returns a string representing the type of the value given, eg: "integer".
