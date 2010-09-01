@@ -57,19 +57,19 @@ Koi features a full set of basic and compound data types including:
 Koi currently only implements a minimal set of flow control operators:
 
   if( expression )
-    call( do_work )
+    do_work
   endif
   
   unless( expression )
-    call( do_other_work )
+    do_other_work
   endunless
   
 === Built-in functions
 
 [print( string )]                     Writes a string to STDOUT.
 [gets()]                              Fetches a newline delimited string from STDIN.
-[call( identifier [, parameter])]    Calls the function that is stored in 'identifier'.
-[tailcall( identifier[, parameter])] Performs a 'tailcall' to the function stored in 'identifier'. This type of call is used when recursing heavily to improve performance and to facilitate the use of functions as iterators.
+[call( identifier [, parameter])]     Calls the function that is stored in 'identifier'.
+[tailcall( identifier[, parameter])]  Performs a 'tailcall' to the function stored in 'identifier'. This type of call is used when recursing heavily to improve performance and to facilitate the use of functions as iterators.
 [return([ value ])]                   Return a value from a function.
 [to_string( value )]                  Converts the given value to a representative string.
 [type_of( value )]                    Returns a string representing the type of the value given, eg: "integer".
@@ -86,7 +86,7 @@ The default installation of Koi consists of the following discrete components:
 * The reference compiler: {koi-reference-compiler}[http://github.com/aarongough/koi-reference-compiler]
 * The standard Virtual Machine: {koi-vm-ruby}[http://github.com/aarongough/koi-vm-ruby]
 
-Each of these components are completely stand-alone and are specifically designed to be as simple as possible. I strongly encourage pulling them apart to see how they tick, and changing them if you see fit! Just make sure if to contribute any improvements back to the main repository!
+Each of these components are completely stand-alone and are specifically designed to be as simple as possible. I strongly encourage pulling them apart to see how they tick, and changing them if you see fit! Just make sure to contribute any improvements back to the main repository!
 
 ==== Hope you enjoy Koi!
 
