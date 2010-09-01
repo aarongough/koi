@@ -1,6 +1,8 @@
 = Koi
 
-Koi is a small programming language that is designed to be easy to use, easy to understand and easy to implement. Koi is an imperative, dynamic, weakly-typed language with first-class functions. Koi's syntax is influenced by JavaScript, Lua and Ruby, but works very hard to be unambiguous so that it is easy to write parsers for (in stark contrast with Ruby).
+Koi is a small programming language that is designed to be easy to use, easy to understand and easy to implement. 
+
+Koi is an imperative, dynamic, weakly-typed language with first-class functions. Koi's syntax and features were influenced by JavaScript, Lua and Ruby. Koi makes a point of working very hard to be unambiguous in it's syntax so that it is easy to write parsers for.
 
 === Example
 
@@ -24,7 +26,7 @@ This is an old-school 'Blast Off!' program written in Koi:
 
 === Installation
 
-For ease of installation the default installation of Koi is packaged as a RubyGem. Providing you have Ruby and RubyGems installed installing Koi is as easy as entering the following command in a terminal:
+For ease of use the default installation of Koi is packaged as a RubyGem. Providing you already have Ruby and RubyGems installing Koi is as easy as entering the following command in a terminal:
 
   gem install koi-lang
   
@@ -64,13 +66,13 @@ Koi currently only implements a minimal set of flow control operators:
   
 === Built-in functions
 
-print( string )::   Writes a string to STDOUT.
-gets()::    Fetches a newline delimited string from STDIN.
-call( identifier [, parameter])::   Calls the function that is stored in 'identifier'.
-tailcall( identifier[, parameter])::  Performs a 'tailcall' to the function stored in 'identifier'. This type of call is used when recursing heavily to improve performance and to facilitate the use of functions as iterators.
-return( [value] ):: Return a value from a function.
-to_string( value/identifier ):: Converts the given value to a representative string.
-type_of( value ):: Returns a string representing the type of the value given, eg: "integer".
+[print( string )]                     Writes a string to STDOUT.
+[gets()]                              Fetches a newline delimited string from STDIN.
+[call( identifier [, parameter])]     Calls the function that is stored in 'identifier'.
+[tailcall( identifier[, parameter])]  Performs a 'tailcall' to the function stored in 'identifier'. This type of call is used when recursing heavily to improve performance and to facilitate the use of functions as iterators.
+[return( [value] )]                   Return a value from a function.
+[to_string( value/identifier )]       Converts the given value to a representative string.
+[type_of( value )]                    Returns a string representing the type of the value given, eg: "integer".
 
 === Reserved words
 
