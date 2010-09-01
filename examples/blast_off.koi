@@ -1,0 +1,13 @@
+countdown = function( count )
+  print( to_string( count ))
+  print( ", " )
+  if( count == 0 )
+    return()
+  end
+  count = count - 1
+  call( countdown, count )
+end
+
+call( countdown, 10 )
+
+print( "Blast Off!" )

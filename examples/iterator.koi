@@ -1,0 +1,25 @@
+test = { 0 => "element 1", 1 => "element 1", 2 => "element 3", 3 => "element 4" }
+
+iterator = function(hash)
+  index = hash["counter"]
+  
+  if( index == nil )
+    hash["counter"] = 0
+    index = 0
+  end
+  
+  content = hash[index]
+  
+  if( type_of(content) == "string")
+    print( content )
+  end
+  
+  if( content == nil )
+    return()
+  end
+  
+  hash[counter] = index + 1
+  call( iterator, hash )
+end
+
+call( iterator, test )

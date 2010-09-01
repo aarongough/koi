@@ -1,0 +1,10 @@
+new_function = function(arg)
+  func = function(arg)
+    print("Dynamically created function")
+  end
+  return( func )
+end
+
+func = call( new_function, nil )
+
+call( func, nil )
