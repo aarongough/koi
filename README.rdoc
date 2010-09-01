@@ -4,6 +4,8 @@ Koi is a small programming language that is designed to be easy to use, easy to 
 
 Koi is an imperative, dynamic, weakly-typed language with first-class functions. Koi's syntax and features were influenced by JavaScript, Lua and Ruby. Koi makes a point of working very hard to be unambiguous in it's syntax so that it is easy to write parsers for.
 
+Koi's main goal is to be a useful language that teaches the basics of language implementation. The project was started because I wanted to learn more about how languages work 'under the hood' and Koi is my way of sharing what I've learnt with as many people as possible.
+
 === Example
 
 This is an old-school 'Blast Off!' program written in Koi:
@@ -58,18 +60,18 @@ Koi currently only implements a minimal set of flow control operators:
 
   if( expression )
     do_work
-  endif
+  end
   
   unless( expression )
     do_other_work
-  endunless
+  end
   
 === Built-in functions
 
 [print( string )]                     Writes a string to STDOUT.
 [gets()]                              Fetches a newline delimited string from STDIN.
 [call( identifier [, parameter])]     Calls the function that is stored in 'identifier'.
-[tailcall( identifier[, parameter])]  Performs a 'tailcall' to the function stored in 'identifier'. This type of call is used when recursing heavily to improve performance and to facilitate the use of functions as iterators.
+[tailcall( identifier [, parameter])] Performs a 'tailcall' to the function stored in 'identifier'. This type of call is used when recursing heavily to improve performance and to facilitate the use of functions as iterators. {More information on tailcalls.}[http://en.wikipedia.org/wiki/Tail_call]
 [return([ value ])]                   Return a value from a function.
 [to_string( value )]                  Converts the given value to a representative string.
 [type_of( value )]                    Returns a string representing the type of the value given, eg: "integer".
